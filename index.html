@@ -1,81 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	
-  	<link rel="stylesheet"  href="./style.css" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Helvetica Neue:wght@500&display=swap" />
-  	
-  	
-  	
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joanna Istanbul</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  	
-  	<div class="desktop-layout">
-    		<div class="reservation-events">
-      			<div class="background">
-      			</div>
-      			<div class="private-events-button">
-        				<div class="private-events">PRIVATE EVENTS</div>
-      			</div>
-      			<div class="reservation-button">
-        				<div class="reservation">RESERVATION</div>
-      			</div>
-      			<div class="reservation-events-child">
-      			</div>
-    		</div>
-    		<div class="about-us">
-      			<div class="about-us-child">
-      			</div>
-      			<img class="screenshot-2025-08-20-at-1116" alt="" src="Screenshot 2025-08-20 at 11.16.44 PM.png">
-      			
-      			<img class="screenshot-2025-08-20-at-11161" alt="" src="Screenshot 2025-08-20 at 11.16.49 PM.png">
-      			
-      			<img class="screenshot-2025-08-20-at-1117" alt="" src="Screenshot 2025-08-20 at 11.17.00 PM.png">
-      			
-      			<img class="screenshot-2025-08-20-at-1115" alt="" src="Screenshot 2025-08-20 at 11.15.47 PM 1.png">
-      			
-      			<img class="screenshot-2025-08-20-at-11162" alt="" src="Screenshot 2025-08-20 at 11.16.12 PM 1.png">
-      			
-      			<div class="joanna-is-a-container">
-        				<span class="joanna-is-a-container1">
-          					<p class="joanna-is-a">           Joanna is a future classic restaurant and bar located in a three-floor building in Arnavutköy, Beşiktaş. More than a venue, it’s</p>
-          					<p class="a-layered-experience">a layered experience. With four distinct levels, Joanna blends dining, music, study, and bar culture into a rhythm of its own — from</p>
-          					<p class="a-layered-experience">daytime rituals to nighttime release, from stillness to movement, from sunlight to club dark.</p>
-          					<p class="a-layered-experience">&nbsp;</p>
-          					<p class="joanna-is-a">           On the ground floor, a coffee bar greets the street; a seaside restaurant and open kitchen set the tone for shared moments</p>
-          					<p class="a-layered-experience">and plates. Upstairs, the first floor — The Living Room — is quieter, slower. Offers a space to study, collective workshops, or quiet</p>
-          					<p class="a-layered-experience">gatherings. Then comes the second floor, where the pulse changes. DJ sets echo, bodies move, senses blur. At the very top: The</p>
-          					<p class="a-layered-experience">Terrace. Cocktails, live sets, and the Bosphorus — with the sky as the ceiling.</p>
-          					<p class="a-layered-experience">&nbsp;</p>
-          					<p class="joanna-is-a">           She is intentionally multifaceted, holds contrast with ease. The nobility in her blood, and the sweat of 2nd floor on her skin.</p>
-          					<p class="a-layered-experience">But it’s never complete without you. Every visit shapes her — calm or wild, quiet or loud. She invites you to find her for yourself.</p>
-        				</span>
-      			</div>
-    		</div>
-    		<div class="landing-page">
-      			<img class="background-image-icon" alt="" src="Background Image.png">
-      			
-      			<div class="joanna-logo">
-        				<img class="vector-icon" alt="" src="Vector.svg">
-        				
-      			</div>
-      			<div class="navigation">
-        				<div class="buttons">
-          					<div class="location">reservation</div>
-          					<div class="location">private events</div>
-          					<div class="location">about us</div>
-          					<div class="location">location</div>
-        				</div>
-        				<img class="joanna-small-logo" alt="" src="Joanna Small Logo.svg">
-        				
-      			</div>
-    		</div>
-  	</div>
-  	
-  	
-  	
-  	
+
+  <header class="top-bar">
+    <a class="top-bar__brand" href="#top">
+      <img src="./images/joanna-header-mark.svg" alt="Joanna" width="261" height="333">
+    </a>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+      <span class="menu-toggle__bar" aria-hidden="true"></span>
+    </button>
+    <nav class="top-bar__nav" id="siteNav" aria-label="Main">
+      <a class="info-label top-bar__nav-link" href="https://guest.resfor.com/l/Joanna" target="_blank" rel="noopener noreferrer">Reservations</a>
+      <a class="info-label top-bar__nav-link" href="#location">Location</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Welcome">
+      <div class="hero__media">
+        <img class="hero__bg" src="https://www.figma.com/api/mcp/asset/068afa4a-fcff-45e7-988b-f9a89525cbd1" alt="">
+        <div class="hero__overlay">
+          <h1 class="hero__title">
+            <span class="visually-hidden">Joanna Istanbul</span>
+          </h1>
+          <img
+            class="hero__logo"
+            src="./images/joanna-hero-wordmark.svg"
+            alt=""
+            width="476"
+            height="295"
+            aria-hidden="true"
+            decoding="async"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="our-story">
+      <div class="story__intro">
+        <p class="about__diamonds" aria-hidden="true">♦♦♦</p>
+        <div class="about__text">
+          <p>Joanna invites you into her home to let you find her for yourself.</p>
+          <p>Joanna is a four-floor venue located by the Bosphorus in Arnavutköy, Beşiktaş, containing a restaurant, bar, club, and terrace spread across separate floors. Food, music, and homelike ambience come together to give every guest a unique experience.</p>
+        </div>
+        <a
+          class="story__intro-cta closing__label closing__cta"
+          href="https://guest.resfor.com/l/Joanna"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Reservations</a>
+        <div class="story__intro-art" aria-hidden="true">
+          <img src="./images/story-intro-toast.png" alt="" width="1024" height="1024" loading="lazy">
+        </div>
+      </div>
+      <div class="story__fullbleed" aria-hidden="true">
+        <img src="https://www.figma.com/api/mcp/asset/274d6f85-d7ec-4a28-8785-076ab5cd6b76" alt="">
+      </div>
+
+      <section class="info-strip" id="location">
+        <div class="info-strip__labels">
+          <div class="info-strip__address info-strip__address--map">
+            <a
+              class="info-strip__map-link"
+              href="https://maps.app.goo.gl/QNCQhwMm1CHyGPAt8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p class="info-label info-label--address">BEBEK ARNAVUTKÖY CAD. 32</p>
+            </a>
+            <a
+              class="info-strip__map-link"
+              href="https://maps.app.goo.gl/QNCQhwMm1CHyGPAt8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p class="info-label info-label--address">ISTANBUL, TURKEY</p>
+            </a>
+          </div>
+          <p class="info-label info-label--hours">OPEN EVERY DAY 12PM - 2AM</p>
+          <p class="info-label info-label--phone"><a href="tel:+905491304949">+90 549 130 49 49</a></p>
+        </div>
+        <div class="info-strip__art" aria-hidden="true">
+          <img src="https://www.figma.com/api/mcp/asset/5d552e0d-5e00-4968-b94d-c01b1a7f2725" alt="">
+        </div>
+      </section>
+
+      <div class="story__photo">
+        <figure class="about__photo about__photo--fullbleed">
+          <img src="./images/story-terrace.png" alt="Joanna terrace overlooking the Bosphorus at dusk" width="819" height="1024" loading="lazy">
+        </figure>
+      </div>
+      <div class="story__red">
+        <div class="about__text">
+          <p>Taste her curated menu of favorite dishes discovered during travels, served as sharable plates in <em>The Kitchen</em>. Enjoy <em>The Study</em>, her quiet sanctuary and personal library for private gatherings and workshops. Find yourself on the dance floor in <em>The Living Room</em> and stay until the music ends. Savor carefully crafted cocktails on <em>The Rooftop</em> under the open sky with panoramic Bosphorus views.</p>
+          <p>Step into her world, if only for the night.</p>
+        </div>
+        <img class="about__art" src="https://www.figma.com/api/mcp/asset/97b9554a-1fa8-48f3-af7b-eeb991bf318f" alt="">
+      </div>
+
+      <div class="full-bleed-photo" aria-hidden="true">
+        <img src="https://www.figma.com/api/mcp/asset/38d708da-45b8-4f8a-b69a-21a56d519b33" alt="">
+      </div>
+    </section>
+
+    <section class="closing">
+      <img class="closing__art" src="https://www.figma.com/api/mcp/asset/e0868c85-e065-4611-b879-f74dbff629cc" alt="">
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
