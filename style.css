@@ -1,0 +1,226 @@
+body {
+  	margin: 0;
+  	line-height: normal;
+}
+.background {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #0a0a0a;
+  	width: 1440px;
+  	height: 440px;
+}
+.private-events {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	line-height: 150%;
+  	font-weight: 500;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	width: 583px;
+  	height: 210px;
+}
+.private-events-button {
+  	position: absolute;
+  	top: 121px;
+  	left: 746px;
+  	width: 583px;
+  	height: 210px;
+}
+.reservation {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	line-height: 150%;
+  	font-weight: 500;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	width: 555.3px;
+  	height: 200px;
+}
+.reservation-button {
+  	position: absolute;
+  	top: 126px;
+  	left: 110px;
+  	width: 555.3px;
+  	height: 200px;
+}
+.reservation-events-child {
+  	position: absolute;
+  	top: 44px;
+  	left: 34px;
+  	background-color: #f9f7f7;
+  	width: 1373px;
+  	height: 352px;
+}
+.reservation-events {
+  	position: absolute;
+  	top: 1759px;
+  	left: 0px;
+  	width: 1440px;
+  	height: 440px;
+  	text-align: center;
+}
+.about-us-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #0a0a0a;
+  	width: 1440px;
+  	height: 880px;
+}
+.screenshot-2025-08-20-at-1116 {
+  	position: absolute;
+  	top: 548px;
+  	left: 51px;
+  	width: 131px;
+  	height: 163px;
+  	object-fit: cover;
+}
+.screenshot-2025-08-20-at-11161 {
+  	position: absolute;
+  	top: 674px;
+  	left: 163px;
+  	width: 81px;
+  	height: 112px;
+  	object-fit: cover;
+}
+.screenshot-2025-08-20-at-1117 {
+  	position: absolute;
+  	top: 650px;
+  	left: 304px;
+  	width: 99px;
+  	height: 122px;
+  	object-fit: cover;
+}
+.screenshot-2025-08-20-at-1115 {
+  	position: absolute;
+  	top: 93px;
+  	left: 1129px;
+  	width: 145px;
+  	height: 159px;
+  	object-fit: cover;
+}
+.screenshot-2025-08-20-at-11162 {
+  	position: absolute;
+  	top: 218px;
+  	left: 1251px;
+  	width: 125px;
+  	height: 199px;
+  	object-fit: cover;
+}
+.joanna-is-a {
+  	margin: 0;
+  	white-space: pre-wrap;
+}
+.a-layered-experience {
+  	margin: 0;
+}
+.joanna-is-a-container1 {
+  	width: 100%;
+}
+.joanna-is-a-container {
+  	position: absolute;
+  	top: 266.21px;
+  	left: 143.78px;
+  	line-height: 150%;
+  	font-weight: 500;
+  	display: flex;
+  	align-items: center;
+  	width: 1192px;
+  	height: 342.1px;
+}
+.about-us {
+  	position: absolute;
+  	top: 879px;
+  	left: 0px;
+  	width: 1440px;
+  	height: 880px;
+  	font-size: 18px;
+}
+.background-image-icon {
+  	position: absolute;
+  	width: 100%;
+  	top: calc(50% - 440px);
+  	right: 0%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	height: 880px;
+  	object-fit: cover;
+}
+.vector-icon {
+  	position: absolute;
+  	height: 49.7%;
+  	width: 69.24%;
+  	top: 25.06%;
+  	right: 15.43%;
+  	bottom: 25.24%;
+  	left: 15.33%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
+}
+.joanna-logo {
+  	position: absolute;
+  	top: 242px;
+  	left: 403px;
+  	width: 635px;
+  	height: 396px;
+  	overflow-y: auto;
+}
+.location {
+  	position: relative;
+  	line-height: 150%;
+  	font-weight: 500;
+}
+.buttons {
+  	position: absolute;
+  	top: 68px;
+  	right: 78.3px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-end;
+  	gap: 48px;
+}
+.joanna-small-logo {
+  	position: absolute;
+  	top: 8.06px;
+  	left: 19.17px;
+  	width: 121px;
+  	height: 155px;
+  	overflow: hidden;
+}
+.navigation {
+  	position: absolute;
+  	width: calc(100% - 21.7px);
+  	top: 7.94px;
+  	right: 10.87px;
+  	left: 10.83px;
+  	height: 162.7px;
+  	overflow: hidden;
+}
+.landing-page {
+  	position: absolute;
+  	width: 100%;
+  	top: calc(50% - 2405.5px);
+  	right: 0%;
+  	left: 0%;
+  	height: 880px;
+  	font-size: 20px;
+}
+.desktop-layout {
+  	width: 100%;
+  	position: relative;
+  	background-color: #0a0a0a;
+  	height: 4811px;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: 32px;
+  	color: #f9f7f7;
+  	font-family: 'Helvetica Neue';
+}
