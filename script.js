@@ -1,5 +1,3 @@
-// Very small script: open/close mobile menu (smooth in-page scroll: scroll-behavior on html in CSS)
-
 var menuButton = document.getElementById("menuToggle");
 var siteNav = document.getElementById("siteNav");
 var header = document.querySelector(".top-bar");
@@ -22,3 +20,126 @@ if (siteNav && header && menuButton) {
     });
   }
 }
+
+(function () {
+  function isCoarseTouch() {
+    return window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  }
+
+  function tapFlashMs() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return 120;
+    }
+    return 260;
+  }
+
+  function scheduleTapActive(el) {
+    if (!el) return;
+    el.classList.add("tap-active");
+    clearTimeout(el._tapActiveTimer);
+    el._tapActiveTimer = setTimeout(function () {
+      el.classList.remove("tap-active");
+      el._tapActiveTimer = null;
+    }, tapFlashMs());
+  }
+
+  function blurSoon(el) {
+    if (!el || !isCoarseTouch()) return;
+    window.requestAnimationFrame(function () {
+      el.blur();
+    });
+  }
+
+  function bindTapFeedback() {
+    if (!isCoarseTouch()) return;
+
+    var brand = document.querySelector(".top-bar__brand");
+    if (brand) {
+      brand.addEventListener(
+        "touchend",
+        function () {
+          scheduleTapActive(brand);
+          blurSoon(brand);
+        },
+        { passive: true }
+      );
+      brand.addEventListener("click", function () {
+        blurSoon(brand);
+      });
+    }
+
+    var navLinks = document.querySelectorAll(".top-bar__nav .top-bar__nav-link");
+    for (var i = 0; i < navLinks.length; i++) {
+      (function (link) {
+        link.addEventListener(
+          "touchend",
+          function () {
+            scheduleTapActive(link);
+            blurSoon(link);
+          },
+          { passive: true }
+        );
+        link.addEventListener("click", function () {
+          blurSoon(link);
+        });
+      })(navLinks[i]);
+    }
+
+    var ctas = document.querySelectorAll("a.closing__label");
+    for (var j = 0; j < ctas.length; j++) {
+      (function (cta) {
+        cta.addEventListener(
+          "touchend",
+          function () {
+            scheduleTapActive(cta);
+            blurSoon(cta);
+          },
+          { passive: true }
+        );
+        cta.addEventListener("click", function () {
+          blurSoon(cta);
+        });
+      })(ctas[j]);
+    }
+
+    var mapLinks = document.querySelectorAll(".info-strip__map-link");
+    for (var k = 0; k < mapLinks.length; k++) {
+      (function (mapLink) {
+        mapLink.addEventListener(
+          "touchend",
+          function () {
+            var wrap = mapLink.closest(".info-strip__address--map");
+            scheduleTapActive(wrap);
+            blurSoon(mapLink);
+          },
+          { passive: true }
+        );
+        mapLink.addEventListener("click", function () {
+          blurSoon(mapLink);
+        });
+      })(mapLinks[k]);
+    }
+
+    var phoneLink = document.querySelector(".info-label--phone a");
+    if (phoneLink) {
+      phoneLink.addEventListener(
+        "touchend",
+        function () {
+          var pill = phoneLink.closest(".info-label--phone");
+          scheduleTapActive(pill);
+          blurSoon(phoneLink);
+        },
+        { passive: true }
+      );
+      phoneLink.addEventListener("click", function () {
+        blurSoon(phoneLink);
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindTapFeedback);
+  } else {
+    bindTapFeedback();
+  }
+})();
