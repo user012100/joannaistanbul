@@ -1,3 +1,29 @@
+(function () {
+  function isImageTarget(el) {
+    return el && el.tagName === "IMG";
+  }
+
+  document.addEventListener(
+    "contextmenu",
+    function (e) {
+      if (isImageTarget(e.target)) {
+        e.preventDefault();
+      }
+    },
+    false
+  );
+
+  document.addEventListener(
+    "dragstart",
+    function (e) {
+      if (isImageTarget(e.target)) {
+        e.preventDefault();
+      }
+    },
+    false
+  );
+})();
+
 var menuButton = document.getElementById("menuToggle");
 var siteNav = document.getElementById("siteNav");
 var header = document.querySelector(".top-bar");
