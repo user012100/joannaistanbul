@@ -21,6 +21,7 @@
 html {
   --vh-static: 1vh;
   --vh-static: 1svh;
+  --hero-height: calc(var(--vh-static) * 80);
   font-size: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -197,7 +198,6 @@ a {
 }
 
 .hero {
-  --hero-height: calc(var(--vh-static) * 80);
   position: relative;
   background-color: #0a0a0a;
   min-height: var(--hero-height);
@@ -360,6 +360,11 @@ a {
 .story__intro .about__text {
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+.story__intro .story__menu-links {
+  margin-top: clamp(4rem, 11vw, 6rem);
+  margin-bottom: clamp(1.5rem, 5vw, 2.75rem);
 }
 
 .about__text {
@@ -706,6 +711,9 @@ a {
 .closing {
   background-color: #f3cbd8;
   color: #0a0a0a;
+  min-height: var(--hero-height);
+  display: flex;
+  flex-direction: column;
   padding-top: clamp(12rem, 44vw, 22rem);
   padding-inline: clamp(1.375rem, 6vw, 2.5rem);
   padding-bottom: clamp(1rem, 3.5vw, 2rem);
@@ -716,13 +724,14 @@ a {
 
 .closing__art {
   max-width: min(14rem, 60vw);
-  margin: 0 auto 0;
+  margin: 0 auto;
   display: block;
 }
 
 .closing__instagram-link {
   display: block;
   width: fit-content;
+  margin-top: auto;
   margin-left: auto;
   margin-right: auto;
   text-decoration: none;
@@ -777,7 +786,7 @@ a.closing__label.tap-active {
 }
 
 @media (min-width: 37.5rem) {
-  .hero {
+  html {
     --hero-height: clamp(
       calc(var(--vh-static) * 91),
       calc((var(--vh-static) * 78) + 14vw),
@@ -787,12 +796,36 @@ a.closing__label.tap-active {
 }
 
 @media (min-width: 62.5rem) {
-  .hero {
+  html {
     --hero-height: clamp(
       calc(var(--vh-static) * 92),
       calc((var(--vh-static) * 82) + 10vw),
       calc(var(--vh-static) * 96)
     );
+  html.is-ios {
+    --hero-height: calc(var(--vh-static) * 88);
+  }
+
+  @media (min-width: 37.5rem) {
+    html.is-ios {
+      --hero-height: clamp(
+        calc(var(--vh-static) * 94),
+        calc((var(--vh-static) * 82) + 14vw),
+        calc(var(--vh-static) * 98)
+      );
+    }
+  }
+
+  @media (min-width: 62.5rem) {
+    html.is-ios {
+      --hero-height: clamp(
+        calc(var(--vh-static) * 95),
+        calc((var(--vh-static) * 84) + 10vw),
+        calc(var(--vh-static) * 98)
+      );
+    }
+  }
+
   }
 }
 
@@ -1023,11 +1056,19 @@ a.closing__label.tap-active {
     max-width: none;
   }
 
-  .hero {
+  html {
     --hero-height: clamp(
       calc(var(--vh-static) * 93),
       calc((var(--vh-static) * 89) + 5vw),
       calc(var(--vh-static) * 96)
+    );
+  }
+
+  html.is-ios {
+    --hero-height: clamp(
+      calc(var(--vh-static) * 96),
+      calc((var(--vh-static) * 92) + 5vw),
+      calc(var(--vh-static) * 99)
     );
   }
 

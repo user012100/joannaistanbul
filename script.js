@@ -14,6 +14,8 @@
   function bindIOSViewportLock() {
     if (!isIOS()) return;
 
+    document.documentElement.classList.add("is-ios");
+
     var lastWidth = window.innerWidth;
     var resizeTimer = null;
 
