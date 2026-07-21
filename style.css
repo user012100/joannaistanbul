@@ -19,6 +19,8 @@
 }
 
 html {
+  --vh-static: 1vh;
+  --vh-static: 1svh;
   font-size: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -195,8 +197,7 @@ a {
 }
 
 .hero {
-  --hero-height: 80vh;
-  --hero-height: 80svh;
+  --hero-height: calc(var(--vh-static) * 80);
   position: relative;
   background-color: #0a0a0a;
   min-height: var(--hero-height);
@@ -777,15 +778,21 @@ a.closing__label.tap-active {
 
 @media (min-width: 37.5rem) {
   .hero {
-    --hero-height: clamp(91vh, calc(78vh + 14vw), 96vh);
-    --hero-height: clamp(91svh, calc(78svh + 14vw), 96svh);
+    --hero-height: clamp(
+      calc(var(--vh-static) * 91),
+      calc((var(--vh-static) * 78) + 14vw),
+      calc(var(--vh-static) * 96)
+    );
   }
 }
 
 @media (min-width: 62.5rem) {
   .hero {
-    --hero-height: clamp(92vh, calc(82vh + 10vw), 96vh);
-    --hero-height: clamp(92svh, calc(82svh + 10vw), 96svh);
+    --hero-height: clamp(
+      calc(var(--vh-static) * 92),
+      calc((var(--vh-static) * 82) + 10vw),
+      calc(var(--vh-static) * 96)
+    );
   }
 }
 
@@ -1017,8 +1024,11 @@ a.closing__label.tap-active {
   }
 
   .hero {
-    --hero-height: clamp(93vh, calc(89vh + 5vw), 96vh);
-    --hero-height: clamp(93svh, calc(89svh + 5vw), 96svh);
+    --hero-height: clamp(
+      calc(var(--vh-static) * 93),
+      calc((var(--vh-static) * 89) + 5vw),
+      calc(var(--vh-static) * 96)
+    );
   }
 
   .hero__logo {

@@ -1,4 +1,47 @@
 (function () {
+  function isIOS() {
+    var ua = window.navigator.userAgent || "";
+    var platform = window.navigator.platform || "";
+    var touchMac = platform === "MacIntel" && window.navigator.maxTouchPoints > 1;
+    return /iPad|iPhone|iPod/.test(ua) || touchMac;
+  }
+
+  function setStaticViewportUnit() {
+    var vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh-static", vh + "px");
+  }
+
+  function bindIOSViewportLock() {
+    if (!isIOS()) return;
+
+    var lastWidth = window.innerWidth;
+    var resizeTimer = null;
+
+    setStaticViewportUnit();
+
+    window.addEventListener("orientationchange", function () {
+      window.setTimeout(function () {
+        lastWidth = window.innerWidth;
+        setStaticViewportUnit();
+      }, 250);
+    });
+
+    window.addEventListener("resize", function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(function () {
+        if (Math.abs(window.innerWidth - lastWidth) < 2) {
+          return;
+        }
+        lastWidth = window.innerWidth;
+        setStaticViewportUnit();
+      }, 140);
+    });
+
+    window.addEventListener("pageshow", setStaticViewportUnit);
+  }
+
+  bindIOSViewportLock();
+
   function isImageTarget(el) {
     return el && el.tagName === "IMG";
   }
