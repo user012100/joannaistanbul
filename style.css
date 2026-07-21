@@ -21,11 +21,15 @@
 html {
   --vh-static: 1vh;
   --vh-static: 1svh;
-  --hero-height: calc(var(--vh-static) * 80);
+  --hero-height: calc(var(--vh-static) * 88);
   font-size: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: clamp(3.5rem, 12vw, 5rem);
+}
+
+html.is-ios {
+  --hero-height: calc(var(--vh-static) * 92);
 }
 
 body {
