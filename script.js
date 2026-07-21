@@ -70,15 +70,19 @@ if (siteNav && header && menuButton) {
   }
 
   function blurSoon(el) {
-    if (!el || !isCoarseTouch()) return;
+    if (!el) return;
     window.requestAnimationFrame(function () {
       el.blur();
     });
   }
 
-  function bindTapFeedback() {
-    if (!isCoarseTouch()) return;
+  function blurAfterPointerClick(el, e) {
+    if (!el || !e) return;
+    if (typeof e.detail === "number" && e.detail === 0) return;
+    blurSoon(el);
+  }
 
+  function bindTapFeedback() {
     var brand = document.querySelector(".top-bar__brand");
     if (brand) {
       brand.addEventListener(
@@ -89,8 +93,8 @@ if (siteNav && header && menuButton) {
         },
         { passive: true }
       );
-      brand.addEventListener("click", function () {
-        blurSoon(brand);
+      brand.addEventListener("click", function (e) {
+        blurAfterPointerClick(brand, e);
       });
     }
 
@@ -105,8 +109,8 @@ if (siteNav && header && menuButton) {
           },
           { passive: true }
         );
-        link.addEventListener("click", function () {
-          blurSoon(link);
+        link.addEventListener("click", function (e) {
+          blurAfterPointerClick(link, e);
         });
       })(navLinks[i]);
     }
@@ -122,8 +126,8 @@ if (siteNav && header && menuButton) {
           },
           { passive: true }
         );
-        cta.addEventListener("click", function () {
-          blurSoon(cta);
+        cta.addEventListener("click", function (e) {
+          blurAfterPointerClick(cta, e);
         });
       })(ctas[j]);
     }
@@ -140,8 +144,8 @@ if (siteNav && header && menuButton) {
           },
           { passive: true }
         );
-        mapLink.addEventListener("click", function () {
-          blurSoon(mapLink);
+        mapLink.addEventListener("click", function (e) {
+          blurAfterPointerClick(mapLink, e);
         });
       })(mapLinks[k]);
     }
@@ -157,8 +161,8 @@ if (siteNav && header && menuButton) {
         },
         { passive: true }
       );
-      phoneLink.addEventListener("click", function () {
-        blurSoon(phoneLink);
+      phoneLink.addEventListener("click", function (e) {
+        blurAfterPointerClick(phoneLink, e);
       });
     }
   }
