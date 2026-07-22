@@ -409,6 +409,10 @@ a {
   margin: 0;
 }
 
+.story__menu-link.story__menu-link--restaurant {
+  transform: rotate(0.65deg);
+}
+
 .story__menu-link.story__menu-link--cocktails {
   transform: rotate(0.62deg);
 }
